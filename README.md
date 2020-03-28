@@ -1,2 +1,2 @@
-# Naive_Bayes_in-_Julia
-An implementation of Naive Bayes Classification in plain Julia
+# ML_algorithms_in_Julia
+Implementing Machine Learning algorithms in plain Julia
