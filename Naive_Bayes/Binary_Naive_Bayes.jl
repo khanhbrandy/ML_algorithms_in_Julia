@@ -1,3 +1,9 @@
+#############################################
+# Created on 2020-01-07
+# Creator: khanh.brandy
+# Naive Bayes for binary features
+#############################################
+
 using DataFrames
 using Printf
 

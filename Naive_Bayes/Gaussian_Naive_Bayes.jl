@@ -1,3 +1,9 @@
+#############################################
+# Created on 2020-01-07
+# Creator: khanh.brandy
+# Gaussion Naive Bayes
+#############################################
+
 using DataFrames
 using Printf
 using CSV

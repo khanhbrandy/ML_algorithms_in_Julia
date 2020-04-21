@@ -1,7 +1,14 @@
+#############################################
+# Created on 2020-01-19
+# Creator: khanh.brandy
+# Linear Regression: Using Normal equation
+#############################################
+
 using DataFrames
 using CSV
 using StatsBase
 using Statistics
+
 
 # Define func: train_test_split
 function train_test_split(df)
@@ -15,7 +22,7 @@ function train_test_split(df)
     println("Done train/test splitting!")
 end
 
-# Define func: get theta matrix using Normal equation
+# Define fit func Using Normal equation
 function fit(X_train, y_train)
     println("Start fitting training set...")
     N = length(y_train)

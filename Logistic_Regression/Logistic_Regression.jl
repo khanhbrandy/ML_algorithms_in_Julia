@@ -1,3 +1,9 @@
+#############################################
+# Created on 2020-02-21
+# Creator: khanh.brandy
+# Logistic Regression using Batch Gradient Descent
+#############################################
+
 using DelimitedFiles
 using StatsBase
 using Statistics

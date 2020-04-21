@@ -1,3 +1,9 @@
+#############################################
+# Created on 2020-01-19
+# Creator: khanh.brandy
+# Linear Regression for simple classification
+#############################################
+
 using DataFrames
 using CSV
 using StatsBase
@@ -56,7 +62,7 @@ function lbl_predict(x::Array{Float64,1}, theta::Array{Float64}, e::Float64 = 0.
 end
 
 function classify(X_test::Array{Float64,2}, theta::Array{Float64}, e::Float64 = 0.5)::Array{Int}
-    N = size(preds,1)
+    N = size(X_test,1)
     map(i -> lbl_predict(X_test[i,:], theta, e), collect(1:N))
 end
 
