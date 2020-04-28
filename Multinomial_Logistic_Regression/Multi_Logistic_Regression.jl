@@ -11,8 +11,8 @@ using Plots
 
 # Transform data
 function transform(data)
-    N = size(data,1)
-    df = hcat(ones(N),data)
+    n = size(data,1)
+    df = hcat(ones(n),data)
     return df
 end
 
@@ -46,7 +46,17 @@ function loss(X, y, theta)
     return 1/n * J
 end
 
-
+# Define sample_likelihood
+function sample_likelihood(X, y)
+    n,d = size(X)
+    c = length(unique(y))
+    H = zeros(c,d)
+    for i=1:c
+        K = (y .== i)
+        H[i,:] = (1/n) .* sum(X[K,:], dims = 1) 
+    end
+    return H
+end
 
 # Main
 data = readdlm("Wine Origin/wine.data", ',')
