@@ -58,6 +58,22 @@ function sample_likelihood(X, y)
     return H
 end
 
+########## In progress #########
+
+# Define model likelihood 
+function model_likelihood(X, y, theta)
+    n,d = size(X)
+    c = length(unique(y))
+    M = sum(exp.(X*theta'))
+    H = zeros(c)
+    for i=1:c
+        K = (y .== i)
+        H[i] = sum(exp.(X[K,:]*theta'))/M  
+    end
+    return H
+end
+
+
 # Main
 data = readdlm("Wine Origin/wine.data", ',')
 train_set , test_set = train_test_split(data)
