@@ -35,10 +35,16 @@ function LSE(L)
     maxL + log(sum(new_L))
 end
 
-### Processing
-
-
-####
+# Define Loss func
+function loss(X, y, theta)
+    n = length(y)
+    J_1 = sum(X.*theta[y,:])
+    M = X*theta'
+    N = map(i-> LSE(M[i,:]), collect(1:n))
+    J_2 = sum(N)
+    J = J_1 - J_2
+    return 1/n * J
+end
 
 
 
